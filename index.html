@@ -1,233 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>GP Spiritual Hub | Thirukkural, Gita & Slokas</title>
-
-<meta name="description" content="Explore Thirukkural, Bhagavad Gita, Vinayagar Agaval, Kandha Shashti Kavasam and Adhithya Hrudayam with meanings in Tamil, Hindi and English.">
-<meta name="keywords" content="thirukkural meaning, gita slokas, tamil spiritual, devotion">
-<meta name="robots" content="index, follow">
-
-<!-- 🔐 Paste your Google Search Console code below -->
-<meta name="google-site-verification" content="PASTE_YOUR_CODE_HERE">
-
+<title>GP Spiritual App</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
-body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background:#eef2f7;
-}
+body{margin:0;font-family:'Poppins',sans-serif;background:#f3f3f3}
+header{background:#ff6600;color:#fff;text-align:center;padding:15px}
+.container{padding:15px}
+.section{display:none}
+.active{display:block}/* cards */ .list-card{background:#ff6600;color:#fff;padding:15px;border-radius:15px;margin:10px 0;font-weight:500}
 
-header{
-  background:linear-gradient(135deg,#ff6600,#ff3300);
-  color:white;
-  padding:18px;
-  text-align:center;
-  font-size:22px;
-  font-weight:bold;
-}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px} .card{background:#fff;padding:15px;border-radius:12px;text-align:center;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
 
-.card{
-  background:white;
-  margin:12px;
-  padding:16px;
-  border-radius:16px;
-  box-shadow:0 6px 15px rgba(0,0,0,0.1);
-}
+.search-box input{width:100%;padding:10px;border-radius:20px;border:none} .quote{background:#fff;padding:10px;border-radius:10px;margin:10px 0;text-align:center}
 
-.collapsible{
-  background:#ff6600;
-  color:white;
-  padding:12px;
-  border:none;
-  width:100%;
-  text-align:left;
-  font-size:16px;
-  border-radius:10px;
-}
+.bottom-nav{position:fixed;bottom:0;width:100%;background:#fff;display:flex;justify-content:space-around;padding:10px 0;box-shadow:0 -2px 5px rgba(0,0,0,0.1)} .nav-item{text-align:center;font-size:12px}
 
-.content{
-  display:none;
-  padding:10px;
-}
+a{text-decoration:none} footer{text-align:center;padding:15px;color:#666} </style>
 
-.lang{
-  margin-top:10px;
-  padding:12px;
-  background:#fff7f0;
-  border-left:5px solid #ff6600;
-  border-radius:10px;
-  line-height:1.6;
-}
-
-footer{
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:20px;
-}
-
-a{color:#ff6600;text-decoration:none;}
-</style>
 </head>
+<body><header>
+<h2>🕉 GP Spiritual Hub</h2>
+</header><div class="container"><!-- HOME --><div id="home" class="section active"><div class="search-box">
+<input type="text" placeholder="Search..." onkeyup="searchContent(this.value)">
+</div><div class="quote" id="quote"></div><!-- OLD STYLE LIST --><a href="#"><div class="list-card">🌌 Power of Prayer</div></a> <a href="#"><div class="list-card">📜 Thirukkural (1–5)</div></a> <a href="gita.html"><div class="list-card">🕉 Bhagavad Gita</div></a> <a href="#"><div class="list-card">🐘 Vinayagar Agaval</div></a> <a href="#"><div class="list-card">🔱 Kandha Shashti Kavasam</div></a> <a href="#"><div class="list-card">☀ Adhithya Hrudayam</div></a>
 
-<body>
+<h3>📖 Sacred Texts</h3><div class="grid" id="grid">
+<a href="gita.html"><div class="card">📖<br>Gita</div></a>
+<a href="#"><div class="card">📜<br>Vedas</div></a>
+<a href="#"><div class="card">🧘<br>Upanishads</div></a>
+<a href="#"><div class="card">🔥<br>Puranas</div></a>
+<a href="#"><div class="card">🙏<br>Rudram</div></a>
+<a href="#"><div class="card">📿<br>Shuktas</div></a>
+<a href="#"><div class="card">🕉<br>Namakam</div></a>
+<a href="#"><div class="card">✨<br>Chamakam</div></a>
+<a href="#"><div class="card">📘<br>Bhagavatham</div></a>
+<a href="#"><div class="card">⚔️<br>Mahabharata</div></a>
+<a href="#"><div class="card">📘<br>Ramayana</div></a>
+<a href="#"><div class="card">☀️<br>Surya Purana</div></a>
+<a href="#"><div class="card">🌸<br>Devi Purana</div></a>
+<a href="#"><div class="card">🕉<br>Shiva Purana</div></a>
+<a href="#"><div class="card">🔱<br>Kanda Purana</div></a>
+</div><!-- extra --><a href="#"><div class="list-card">📢 For more information follow us</div></a> <a href="#"><div class="list-card">ℹ️ About</div></a> <a href="#"><div class="list-card">🔒 Privacy Policy</div></a>
 
-<header>🛕 GP Spiritual Hub</header>
+</div><!-- AUDIO --><div id="audio" class="section">
+<h3>🔊 Audio</h3>
+<audio controls><source src="" type="audio/mpeg"></audio>
+</div><!-- BLOG --><div id="blog" class="section">
+<h3>📝 Blog</h3>
+<div id="articles"></div>
+</div><!-- SETTINGS --><div id="settings" class="section">
+<h3>⚙ Settings</h3>
+<button onclick="setLang('en')">English</button>
+<button onclick="setLang('ta')">Tamil</button>
+</div></div><div class="bottom-nav">
+<div class="nav-item" onclick="show('home')">🏠<br>Home</div>
+<div class="nav-item" onclick="show('audio')">🔊<br>Audio</div>
+<div class="nav-item" onclick="show('blog')">📝<br>Blog</div>
+<div class="nav-item" onclick="show('settings')">⚙<br>Settings</div>
+</div><footer>© 2026 GP Spiritual Hub</footer><script>
+function show(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active')}
 
-<!-- POWER -->
-<div class="card">
-<button class="collapsible">🌌 Power of Prayer</button>
-<div class="content">
-<div class="lang">Prayer connects human consciousness with divine energy and the universe.</div>
-<div class="lang">பிரார்த்தனை மனிதனை தெய்வீக சக்தியுடன் இணைக்கிறது.</div>
-<div class="lang">प्रार्थना मनुष्य को दिव्य शक्ति से जोड़ती है।</div>
-</div>
-</div>
+// quote
+const quotes=["Do your duty without expecting results","The soul never dies","Peace comes from within","Change is eternal"];
+document.getElementById('quote').innerText=quotes[Math.floor(Math.random()*quotes.length)];
 
-<!-- THIRUKKURAL -->
-<div class="card">
-<button class="collapsible">📜 Thirukkural (1–5)</button>
-<div class="content">
+// search
+function searchContent(val){val=val.toLowerCase();document.querySelectorAll('.card,.list-card').forEach(c=>{c.style.display=c.innerText.toLowerCase().includes(val)?'block':'none'})}
 
-<div class="lang">
-1. அகர முதல எழுத்தெல்லாம் ஆதி<br>
-பகவன் முதற்றே உலகு<br>
-English: God is the first cause of the world.
-</div>
+// lang
+function setLang(lang){alert(lang==='ta'?'தமிழ் தேர்ந்தெடுக்கப்பட்டது':'English Selected')}
 
-<div class="lang">
-2. கற்றதனால் ஆய பயனென்கொல் வாலறிவன்<br>
-நற்றாள் தொழாஅர் எனின்<br>
-English: Learning is useless without devotion.
-</div>
-
-<div class="lang">
-3. மலர்மிசை ஏகினான் மாணடி சேர்ந்தார்<br>
-நிலமிசை நீடுவாழ் வார்<br>
-English: Those who reach God live well.
-</div>
-
-<div class="lang">
-4. வேண்டுதல் வேண்டாமை இலானடி சேர்ந்தார்க்கு<br>
-யாண்டும் இடும்பை இல<br>
-English: Desireless people are free from sorrow.
-</div>
-
-<div class="lang">
-5. இருள்சேர் இருவினையும் சேரா இறைவன்<br>
-பொருள்சேர் புகழ்புரிந்தார் மாட்டு<br>
-English: Evil does not affect the righteous.
-</div>
-
-</div>
-</div>
-
-<!-- GITA -->
-<div class="card">
-<button class="collapsible">🕉️ Bhagavad Gita</button>
-<div class="content">
-
-<div class="lang">
-कर्मण्येवाधिकारस्ते मा फलेषु कदाचन<br>
-தமிழ்: செயலில் மட்டும் உன் உரிமை உள்ளது<br>
-हिन्दी: कर्म करो, फल की चिंता मत करो<br>
-English: Focus on action, not results.
-</div>
-
-<div class="lang">
-यदा यदा हि धर्मस्य ग्लानिर्भवति भारत<br>
-English: I appear when dharma declines.
-</div>
-
-<div class="lang">
-न जायते म्रियते वा कदाचित्<br>
-English: Soul is eternal.
-</div>
-
-</div>
-</div>
-
-<!-- VINAYAGAR -->
-<div class="card">
-<button class="collapsible">🐘 Vinayagar Agaval</button>
-<div class="content">
-<div class="lang">
-சீதக் களப செந்தாமரை பூம் பாதம்<br>
-English: Lord Ganesha grants spiritual awakening.
-</div>
-</div>
-</div>
-
-<!-- KANDHA -->
-<div class="card">
-<button class="collapsible">🔱 Kandha Shashti Kavasam</button>
-<div class="content">
-<div class="lang">
-வேலும் மயிலும் துணை<br>
-English: Lord Murugan protects devotees.
-</div>
-</div>
-</div>
-
-<!-- ADHITHYA -->
-<div class="card">
-<button class="collapsible">☀️ Adhithya Hrudayam</button>
-<div class="content">
-<div class="lang">
-आदित्यहृदयम् पुण्यं सर्वशत्रुविनाशनम्<br>
-English: Sun worship gives victory and strength.
-</div>
-</div>
-</div>
-
-<!-- FOLLOW -->
-<div class="card">
-<button class="collapsible">📢 For more information follow us</button>
-<div class="content">
-<div class="lang">
-<a href="https://www.youtube.com/@Spgavh">YouTube</a><br>
-<a href="https://www.instagram.com/gpspiritualhub830531">Instagram</a><br>
-<a href="https://www.facebook.com/profile.php?id=61573359535287">Facebook</a><br>
-<a href="https://x.com/rahnan310583">Twitter (X)</a>
-</div>
-</div>
-</div>
-
-<!-- ABOUT -->
-<div class="card">
-<button class="collapsible">ℹ️ About</button>
-<div class="content">
-<div class="lang">
-GP Spiritual Hub shares spiritual knowledge, slokas and meanings in Tamil, Hindi and English.
-</div>
-</div>
-</div>
-
-<!-- PRIVACY -->
-<div class="card">
-<button class="collapsible">🔒 Privacy Policy</button>
-<div class="content">
-<div class="lang">
-This website may use cookies and Google AdSense services.
-</div>
-</div>
-</div>
-
-<footer>
-<p>© 2026 GP Spiritual Hub</p>
-</footer>
-
-<script>
-document.querySelectorAll(".collapsible").forEach(btn=>{
-btn.onclick=()=>{
-let c=btn.nextElementSibling;
-c.style.display=c.style.display==="block"?"none":"block";
-}
-});
-</script>
-
-</body>
+// blog auto
+const articles=["Gita Wisdom","Shiva Story","Ramayana Lesson","Krishna Teaching"];
+document.getElementById('articles').innerHTML=articles.map(a=>`<div class='card'>${a}</div>`).join('');
+</script></body>
 </html>
