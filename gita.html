@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhagavad Gita</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background:#f5f5f5;
+}
+
+header {
+  background:#ff6600;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
+
+.container {
+  padding:15px;
+}
+
+.card {
+  background:white;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:15px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+button {
+  padding:10px;
+  margin:5px;
+  border:none;
+  background:#ff6600;
+  color:white;
+  border-radius:5px;
+}
+
+select {
+  padding:10px;
+  width:100%;
+  margin-bottom:10px;
+}
+</style>
+
+</head>
+<body>
+
+<header>
+<h2>🕉 Bhagavad Gita</h2>
+</header>
+
+<div class="container">
+
+<select id="chapterSelect" onchange="loadChapter()"></select>
+
+<div id="content" class="card">Loading...</div>
+
+<button onclick="prevVerse()">⬅ Previous</button>
+<button onclick="nextVerse()">Next ➡</button>
+
+</div>
+
+<script>
+
+let chapter = 1;
+let verse = 1;
+
+// load chapters dropdown
+for(let i=1;i<=18;i++){
+  document.getElementById("chapterSelect").innerHTML += 
+    `<option value="${i}">Chapter ${i}</option>`;
+}
+
+async function loadVerse(c, v){
+  try{
+    let res = await fetch(`https://bhagavadgitaapi.in/slok/${c}/${v}`);
+    let data = await res.json();
+
+    document.getElementById("content").innerHTML = `
+      <h3>Chapter ${data.chapter}, Verse ${data.verse}</h3>
+      <p><b>🕉 Sanskrit:</b><br>${data.slok}</p>
+      <p><b>🔤 Transliteration:</b><br>${data.transliteration}</p>
+      <p><b>📖 Meaning (English):</b><br>${data.tej?.ht || data.transliteration}</p>
+    `;
+
+  }catch(e){
+    document.getElementById("content").innerHTML = "No more verses";
+  }
+}
+
+function nextVerse(){
+  verse++;
+  loadVerse(chapter, verse);
+}
+
+function prevVerse(){
+  if(verse>1) verse--;
+  loadVerse(chapter, verse);
+}
+
+function loadChapter(){
+  chapter = document.getElementById("chapterSelect").value;
+  verse = 1;
+  loadVerse(chapter, verse);
+}
+
+loadVerse(chapter, verse);
+
+</script>
+
+</body>
+</html>
